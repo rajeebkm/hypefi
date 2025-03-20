@@ -1,0 +1,19 @@
+{
+    "hardhat": {
+        "HypeFi": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+        "BondingCurve": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
+        "AirdropContract": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
+        "HypeFiFactory": "0x5FC8d32690cc91D4c39d9d3abcBD16989F875707",
+        "StartBlock": 0,
+        "Core_Subgraph": ""
+    },
+    "coreTestnet": {
+        "HypeFi": "0x2589D7228869e62a2a805daa8CF46B325380Cd07",
+        "BondingCurve": "0xe4D80ED5C8344A129535895255814e57f131c4CD",
+        "AirdropContract": "0xac9A9B500a313f4c1B980b4492d3F436376F9776",
+        "HypeFiFactory": "0x4595c0Fa428e4BE211566237041D1e4FEac7fda4",
+        "StartBlock": 3060703,
+        "Core_Subgraph": "",
+        "HypeFiRewards": "0xb6Fc949059b4636E34bD28B1245832270Fe5d17a"
+    }
+}

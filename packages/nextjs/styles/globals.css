@@ -1,0 +1,257 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0d0916;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-manrope-sans);
+}
+
+.page {
+  max-width: 80%;
+  margin: auto;
+  @apply px-5;
+}
+
+h1 {
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 56px;
+  letter-spacing: -0.01em;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+h3 {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -0.01em;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+h4 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: -0.01em;
+}
+
+h5 {
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 24px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+h6 {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 24px;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+p {
+  font-size: 18px;
+  line-height: 28px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+.SwitchRoot {
+	width: 42px;
+	height: 20px;
+	background-color: rgba(119, 85, 255, 0.3);
+	border-radius: 9999px;
+	position: relative;
+	box-shadow: 0 2px 10px var(--black-a7);
+  padding: 0;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	&[data-state="checked"] {
+		background-color: rgba(119, 85, 255, 1);
+	}
+}
+
+.SwitchThumb {
+	display: block;
+	width: 21px;
+	height: 21px;
+	background-color: rgb(189, 189, 189);
+	border-radius: 9999px;
+	box-shadow: 0 2px 2px var(--black-a7);
+	transition: transform 100ms;
+	transform: translateX(2px);
+	will-change: transform;
+	&[data-state="checked"] {
+		transform: translateX(19px);
+	}
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: -0.01em;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+button {
+  @apply py-3 px-4 font-bold rounded-xl flex gap-2 items-center w-max;
+}
+
+@layer utilities {
+  .badge {
+    @apply p-1 rounded-md h-6 font-bold text-xs;
+  }
+
+  .gray-badge {
+    @apply badge bg-gray-800;
+  }
+
+  .pill-badge {
+    @apply badge;
+    @apply px-2 rounded-full flex gap-1;
+  }
+
+  .content-wrapper-card {
+    @apply rounded-xl overflow-hidden border-2 border-solid border-gray-900;
+    background-color: #ffffff12;
+  }
+
+  .content-card-merger {
+    @apply flex flex-col gap-5;
+  }
+
+  .content-card-merger > .content-wrapper-card {
+    @apply border-none bg-transparent p-0;
+  }
+
+  .profile-icon {
+    width: 40px;
+    height: 40px;
+    @apply rounded-full;
+  }
+
+  .modal {
+    @apply rounded-xl border-2 border-solid bg-gray-950 border-white-12;
+    background-color: #100c20;
+  }
+}
+
+.pill-badge > img {
+  @apply rounded-full;
+}
+
+.navbar {
+  border-bottom: solid rgba(255, 255, 255, 0.12) 1px;
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+@keyframes slow-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.bg-conic-gradient {
+  background: conic-gradient(
+    rgba(139, 92, 246, 0),
+    rgba(139, 92, 246, 0.1),
+    rgba(139, 92, 246, 0.2),
+    rgba(139, 92, 246, 0.3),
+    rgba(139, 92, 246, 0.4),
+    rgba(139, 92, 246, 0.5),
+    rgba(139, 92, 246, 0.6),
+    rgba(139, 92, 246, 0.7),
+    rgba(139, 92, 246, 0.8),
+    rgba(139, 92, 246, 0.9),
+    rgba(139, 92, 246, 1),
+    rgba(139, 92, 246, 0)
+  );
+}
+
+.animate-slow-spin {
+  animation: slow-spin 5s linear infinite;
+}
+
+/* Improved scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(13, 9, 22, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(151, 71, 255, 0.5);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(151, 71, 255, 0.7);
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced focus styles for accessibility */
+:focus-visible {
+  outline: 2px solid rgba(151, 71, 255, 0.7);
+  outline-offset: 2px;
+}
+
+/* Image hover effects */
+.image-hover-effect {
+  overflow: hidden;
+}
+
+.image-hover-effect img {
+  transition: transform 0.5s ease;
+}
+
+.image-hover-effect:hover img {
+  transform: scale(1.05);
+}
+
+/* Card hover effects */
+.card-hover-effect {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover-effect:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
